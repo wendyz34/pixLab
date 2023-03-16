@@ -19,7 +19,8 @@ public class ColorChooser
    */
   public static Color pickAColor()
   {
-    Color color = Color.white;
+   Color color = Color.white;
+
     
     // create a JFrame to be the parent of the color chooser open dialog
     // if you don't do this then you may not see the dialog.
@@ -28,7 +29,7 @@ public class ColorChooser
     
     
     // use the color chooser to pick the color
-    color = JColorChooser.showDialog(frame,"Pick a color",color);
+    color = JColorChooser.showDialog(frame,"Choose a color",Color.BLACK);
     
     return color;
   }

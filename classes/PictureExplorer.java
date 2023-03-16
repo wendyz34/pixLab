@@ -79,6 +79,9 @@ public class PictureExplorer implements MouseMotionListener, ActionListener, Mou
   private JMenuItem twoHundred;
   /** 500% zoom level */
   private JMenuItem fiveHundred;
+
+  /**1000% zoom level*/
+  private JMenuItem oneThousand;
   
   /** The picture being explored */
   private DigitalPicture picture;
@@ -157,6 +160,7 @@ public class PictureExplorer implements MouseMotionListener, ActionListener, Mou
     hundredFifty = new JMenuItem("150%");
     twoHundred = new JMenuItem("200%");
     fiveHundred = new JMenuItem("500%");
+    oneThousand = new JMenuItem("1000%");
     
     // add the action listeners
     twentyFive.addActionListener(this);
@@ -166,7 +170,7 @@ public class PictureExplorer implements MouseMotionListener, ActionListener, Mou
     hundredFifty.addActionListener(this);
     twoHundred.addActionListener(this);
     fiveHundred.addActionListener(this);
-    
+    oneThousand.addActionListener(this);
     // add the menu items to the menus
     zoomMenu.add(twentyFive);
     zoomMenu.add(fifty);
@@ -175,6 +179,7 @@ public class PictureExplorer implements MouseMotionListener, ActionListener, Mou
     zoomMenu.add(hundredFifty);
     zoomMenu.add(twoHundred);
     zoomMenu.add(fiveHundred);
+    zoomMenu.add(oneThousand);
     menuBar.add(zoomMenu);
     
     // set the menu bar to this menu
@@ -687,6 +692,7 @@ public class PictureExplorer implements MouseMotionListener, ActionListener, Mou
     hundredFifty.setEnabled(true);
     twoHundred.setEnabled(true);
     fiveHundred.setEnabled(true);
+    oneThousand.setEnabled(true);
   }
   
   /**
@@ -750,6 +756,12 @@ public class PictureExplorer implements MouseMotionListener, ActionListener, Mou
       enableZoomItems();
       fiveHundred.setEnabled(false);
     }
+    if(a.getActionCommand().equals("1000%"))
+    {
+      this.zoom(10.0);
+      enableZoomItems();
+      fiveHundred.setEnabled(false);
+    }
   }
   
   
@@ -800,8 +812,12 @@ public class PictureExplorer implements MouseMotionListener, ActionListener, Mou
    */
   public static void main( String args[])
   {
-    Picture pix = new Picture("beach.jpg");
-    pix.explore();
+    /*Picture pix = new Picture("beach.jpg");
+    pix.explore();*/
+    Picture pix = new Picture("water.jpg");
+    Picture smallP = pix.scale(0.25,0.25);
+   // smallP.write("smallWater.jpg");
+    smallP.explore();
   }
   
 }
