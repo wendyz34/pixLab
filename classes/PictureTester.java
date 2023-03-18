@@ -20,7 +20,7 @@ public class PictureTester
   /** Method to test mirrorVertical */
   public static void testMirrorVertical()
   {
-    Picture caterpillar = new Picture("caterpillar.jpg");
+    Picture caterpillar = new Picture("swan.jpg");
     caterpillar.explore();
     caterpillar.mirrorVertical();
     caterpillar.explore();
@@ -74,8 +74,47 @@ public class PictureTester
     water.fixUnderwater();
     water.explore();
   }
+  public static void testMirrorVerticalRightToLeft(){
+    Picture swan= new Picture("swan.jpg");
+    swan.explore();
+    swan.mirrorVerticalRightToLeft();
+    swan.explore();
+  }
+  public static void testMirrorHorizontal(){
+    Picture swan= new Picture("swan.jpg");
+    swan.explore();
+    swan.mirrorHorizontal();
+    swan.explore();
+  }
+  public static void testMirrorHorizontalBotToTop(){
+    Picture swan= new Picture("swan.jpg");
+    swan.explore();
+    swan.mirrorHorizontalBotToTop();
+    swan.explore();
+  }
+  public static void testMirrorDiagonal(){
+    Picture swan= new Picture("swan.jpg");
+    swan.explore();
+    swan.mirrorDiagonal();
+    swan.explore();
+  }
+  public static void testMirrorArms(){
+    Picture snowman= new Picture("snowman.jpg");
+    snowman.explore();
+    snowman.mirrorDiagonal();
+    snowman.explore();
+  }
+  public static void testMirrorGull(){
+    Picture g= new Picture("seagull.jpg");
+    g.explore();
+    g.mirrorDiagonal();
+    g.explore();
+  }
 
-  
+
+
+
+
   /** Main method for testing.  Every class can have a main
     * method in Java */
   public static void main(String[] args)
@@ -83,13 +122,18 @@ public class PictureTester
     // uncomment a call here to run a test
     // and comment out the ones you don't want
     // to run
-    testZeroBlue();
+    testMirrorTemple();
+    //testZeroBlue();
+    //testMirrorVerticalRightToLeft();
+    //testMirrorHorizontal();
+    //testMirrorHorizontalBotToTop();
+    //testMirrorDiagonal();
     //testKeepOnlyBlue();
     //testKeepOnlyRed();
     //testKeepOnlyGreen();
     //testNegate();
-    testGrayscale();
-    testFixUnderwater();
+    //testGrayscale();
+    //testFixUnderwater();
     //testMirrorVertical();
     //testMirrorTemple();
     //testMirrorArms();
